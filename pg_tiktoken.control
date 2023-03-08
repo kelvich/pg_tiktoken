@@ -1,0 +1,5 @@
+comment = 'pg_tictoken: tiktoken tokenizer for use with OpenAI models in postgres'
+default_version = '@CARGO_VERSION@'
+module_pathname = '$libdir/pgxtest'
+relocatable = false
+superuser = true

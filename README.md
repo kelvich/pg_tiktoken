@@ -8,13 +8,13 @@ Postgres extension that does input tokenization using OpenAI's tiktoken.
 db=> create extension pg_tiktoken;
 CREATE EXTENSION
 db=> select tiktoken_count('p50k_edit', 'A long time ago in a galaxy far, far away');
- tiktoken_count 
+ tiktoken_count
 ----------------
              11
 (1 row)
 
 db=> select tiktoken_encode('cl100k_base', 'A long time ago in a galaxy far, far away');
-                  tiktoken_encode                   
+                  tiktoken_encode
 ----------------------------------------------------
  {32,1317,892,4227,304,264,34261,3117,11,3117,3201}
 (1 row)
@@ -38,13 +38,13 @@ db=> select tiktoken_encode('cl100k_base', 'A long time ago in a galaxy far, far
 Assuming that rust toolchain is already istalled:
 
 ```sh
-# install pgx
-cargo install --locked cargo-pgx
-cargo pgx init
+# install pgrx
+cargo install --locked cargo-pgrx
+cargo pgrx init
 # build and install pg_tiktoken
 git clone https://github.com/kelvich/pg_tiktoken
 cd pg_tiktoken
-cargo pgx install
+cargo pgrx install
 ```
 
 ## Kudos

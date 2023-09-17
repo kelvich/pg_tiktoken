@@ -1,4 +1,4 @@
-use pgx::prelude::*;
+use pgrx::prelude::*;
 
 use tiktoken_rs::encoding_for_model;
 use tiktoken_rs::r50k_base;
@@ -6,7 +6,7 @@ use tiktoken_rs::cl100k_base;
 use tiktoken_rs::p50k_base;
 use tiktoken_rs::p50k_edit;
 
-pgx::pg_module_magic!();
+pgrx::pg_module_magic!();
 
 // encode to the array of tokens using given encoding/model
 //
@@ -47,7 +47,7 @@ fn tiktoken_count(encoding_selector: &str, text: &str) -> i64 {
 #[cfg(any(test, feature = "pg_test"))]
 #[pg_schema]
 mod tests {
-    use pgx::prelude::*;
+    use pgrx::prelude::*;
 
     #[pg_test]
     fn test_tiktoken_encode() {
@@ -101,7 +101,7 @@ mod tests {
 
 }
 
-/// This module is required by `cargo pgx test` invocations. 
+/// This module is required by `cargo pgrx test` invocations.
 /// It must be visible at the root of your extension crate.
 #[cfg(test)]
 pub mod pg_test {

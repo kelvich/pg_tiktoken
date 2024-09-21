@@ -1,27 +1,31 @@
 [package]
 name = "pg_tiktoken"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+name = "pgrx_embed_pg_tiktoken"
+path = "./src/bin/pgrx_embed.rs"
 
 [features]
 default = ["pg13"]
-pg11 = ["pgrx/pg11", "pgrx-tests/pg11" ]
 pg12 = ["pgrx/pg12", "pgrx-tests/pg12" ]
 pg13 = ["pgrx/pg13", "pgrx-tests/pg13" ]
 pg14 = ["pgrx/pg14", "pgrx-tests/pg14" ]
 pg15 = ["pgrx/pg15", "pgrx-tests/pg15" ]
 pg16 = ["pgrx/pg16", "pgrx-tests/pg16" ]
+pg17 = ["pgrx/pg17", "pgrx-tests/pg17" ]
 pg_test = []
 
 [dependencies]
-pgrx = { version = "=0.10.2", features = [ "unsafe-postgres" ] }
+pgrx = { version = "=0.12.4", features = [ "unsafe-postgres" ] }
 tiktoken-rs = { git = "https://github.com/kelvich/tiktoken-rs" }
 
 [dev-dependencies]
-pgrx-tests = "=0.10.2"
+pgrx-tests = "=0.12.4"
 
 [profile.dev]
 panic = "unwind"

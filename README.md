@@ -20,8 +20,16 @@ db=> select tiktoken_encode('cl100k_base', 'A long time ago in a galaxy far, far
 (1 row)
 ```
 
-## Supported models
+## Testing
+```bash
+# build and install pg_tiktoken
+git clone https://github.com/neondatabase/pg_tiktoken
+cd pg_tiktoken
+cargo pgrx install
+cargo pgrx run pg17
+```
 
+## Supported models
 
 | Encoding name           | OpenAI models                                       |
 |-------------------------|-----------------------------------------------------|
@@ -38,11 +46,8 @@ db=> select tiktoken_encode('cl100k_base', 'A long time ago in a galaxy far, far
 Assuming that rust toolchain is already istalled:
 
 ```sh
-# install pgrx
-cargo install --locked cargo-pgrx
-cargo pgrx init
 # build and install pg_tiktoken
-git clone https://github.com/kelvich/pg_tiktoken
+git clone https://github.com/neondatabase/pg_tiktoken
 cd pg_tiktoken
 cargo pgrx install
 ```

@@ -21,11 +21,11 @@ pg17 = ["pgrx/pg17", "pgrx-tests/pg17" ]
 pg_test = []
 
 [dependencies]
-pgrx = { version = "=0.12.6", features = [ "unsafe-postgres" ] }
+pgrx = { version = "=0.12.7", features = [ "unsafe-postgres" ] }
 tiktoken-rs = { git = "https://github.com/kelvich/tiktoken-rs" }
 
 [dev-dependencies]
-pgrx-tests = "=0.12.6"
+pgrx-tests = "=0.12.7"
 
 [profile.dev]
 panic = "unwind"

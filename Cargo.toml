@@ -18,14 +18,15 @@ pg15 = ["pgrx/pg15", "pgrx-tests/pg15" ]
 pg16 = ["pgrx/pg16", "pgrx-tests/pg16" ]
 pg17 = ["pgrx/pg17", "pgrx-tests/pg17" ]
 pg18 = ["pgrx/pg18", "pgrx-tests/pg18"]
+pg19 = ["pgrx/pg19", "pgrx-tests/pg19"]
 pg_test = []
 
 [dependencies]
-pgrx = { version = "=0.16.1", features = [ "unsafe-postgres" ] }
+pgrx = { version = "=0.19.2", features = [ "unsafe-postgres" ] }
 tiktoken-rs = { git = "https://github.com/kelvich/tiktoken-rs" }
 
 [dev-dependencies]
-pgrx-tests = "=0.16.1"
+pgrx-tests = "=0.19.2"
 
 [profile.dev]
 panic = "unwind"
